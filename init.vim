@@ -28,6 +28,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'fenetikm/falcon'
+Plug 'ajh17/Spacegray.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
@@ -52,14 +53,14 @@ syntax on
 set background=dark
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme gruvbox
+colorscheme falcon
 if (has("termguicolors"))
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'falcon',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
@@ -75,7 +76,9 @@ set path+=**
 set hidden
 set noshowmode
 set wildmenu
-" set wildmode=list:longest
+" set wildoptions=pum
+" set pumblend=20
+" set wildmode=longest:full
 
 " Editor text settings
 set scrolloff=10
@@ -98,12 +101,12 @@ set relativenumber
 " set cursorcolumn
 set colorcolumn=80
 " Gruvbox
-hi colorcolumn guibg=#1d2021
+" hi colorcolumn guibg=#1d2021
 " Dracula
 " hi colorcolumn guibg=#181a26
 " OneDark
 " hi colorcolumn guibg=#181c24
-" hi colorcolumn guibg=#000000
+hi colorcolumn guibg=#000000
 " hi colorcolumn guibg=#111111
 " hi SignColumn guibg=#000000
 
