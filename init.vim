@@ -53,14 +53,14 @@ syntax on
 set background=dark
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme falcon
+colorscheme gruvbox
 if (has("termguicolors"))
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
 let g:lightline = {
-      \ 'colorscheme': 'falcon',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
@@ -72,12 +72,13 @@ let g:lightline = {
       \ }
 
 " Editor settings
+set inccommand=nosplit
 set path+=**
 set hidden
 set noshowmode
 set wildmenu
-" set wildoptions=pum
-" set pumblend=20
+set wildoptions=pum
+set pumblend=10
 " set wildmode=longest:full
 
 " Editor text settings
@@ -101,12 +102,12 @@ set relativenumber
 " set cursorcolumn
 set colorcolumn=80
 " Gruvbox
-" hi colorcolumn guibg=#1d2021
+hi colorcolumn guibg=#1d2021
 " Dracula
 " hi colorcolumn guibg=#181a26
 " OneDark
 " hi colorcolumn guibg=#181c24
-hi colorcolumn guibg=#000000
+" hi colorcolumn guibg=#000000
 " hi colorcolumn guibg=#111111
 " hi SignColumn guibg=#000000
 
