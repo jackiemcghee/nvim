@@ -3,13 +3,16 @@
 
 " set t_Co=256
 
+" Switch off Vi ompatibility
+set nocompatible
+
 " vim-plug init
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'mxw/vim-jsx'
 Plug 'JulesWang/css.vim'
 Plug 'w0rp/ale'
@@ -41,9 +44,6 @@ let g:ale_sign_column_always=1
 " Auto format with Prettier: 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-
-" Switch off Vi ompatibility
-set nocompatible
 
 " Set encoding to UTF-8
 set enc=utf-8
@@ -105,11 +105,6 @@ set colorcolumn=80
 hi colorcolumn guibg=#1d2021
 " Dracula
 " hi colorcolumn guibg=#181a26
-" OneDark
-" hi colorcolumn guibg=#181c24
-" hi colorcolumn guibg=#000000
-" hi colorcolumn guibg=#111111
-" hi SignColumn guibg=#000000
 
 " Statusline settings
 " set statusline=
@@ -141,24 +136,11 @@ highlight NonText guifg=#cccccc
 highlight SpecialKey guifg=#cccccc
 
 "" COC stuff
-" if hidden is not set, TextEdit might fail.
-set hidden
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
-
-" Better display for messages
-" set cmdheight=2
-
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -257,4 +239,3 @@ let mapleader="\\"
 nnoremap <leader>r :so ~/.config/nvim/init.vim<cr>
 nnoremap <leader>i gg=G
 nnoremap <leader>/ :noh<cr>
-nnoremap <leader>c gg=G:g/^$/d<cr>
