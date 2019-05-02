@@ -1,7 +1,8 @@
 "" Jackie McGhee's .
 "" Created: 10-Nov-2008
 
-" set t_Co=256
+" Options for diff view
+set diffopt=vertical,filler
 
 " Switch off Vi ompatibility
 set nocompatible
@@ -12,27 +13,16 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
-Plug 'sheerun/vim-polyglot'
 Plug 'mxw/vim-jsx'
 Plug 'JulesWang/css.vim'
 Plug 'w0rp/ale'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'jparise/vim-graphql'
-Plug 'flowtype/vim-flow'
-Plug '/usr/local/opt/fzf'
+Plug 'rbong/vim-flog'
 Plug 'morhetz/gruvbox'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'whatyouhide/vim-gotham'
-Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'fenetikm/falcon'
-Plug 'ajh17/Spacegray.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasr/molokai'
 call plug#end()
 
 " JSX syntax without .JSX suffix
@@ -101,10 +91,9 @@ set backspace=indent,eol,start
 set relativenumber
 " set cursorcolumn
 set colorcolumn=80
+" hi colorcolumn guibg=#1a1a1a
 " Gruvbox
 hi colorcolumn guibg=#1d2021
-" Dracula
-" hi colorcolumn guibg=#181a26
 
 " Statusline settings
 " set statusline=
@@ -236,6 +225,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Leader settings and shortcuts
 let mapleader="\\"
+nnoremap <leader>e :e **/
 nnoremap <leader>r :so ~/.config/nvim/init.vim<cr>
 nnoremap <leader>i gg=G
 nnoremap <leader>/ :noh<cr>
